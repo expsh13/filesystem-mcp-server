@@ -63,7 +63,7 @@ class GitRepo {
   // 新しいGitリポジトリを初期化
   static async init(repoPath: string): Promise<string> {
     try {
-      const { stdout } = await execAsync(`git init`, { cwd: repoPath });
+      const { stdout } = await execAsync("git init", { cwd: repoPath });
       return stdout.trim();
     } catch (error) {
       const errorMsg = error instanceof Error ? error.message : String(error);
